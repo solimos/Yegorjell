@@ -1,0 +1,326 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  background: #f0f0f0;
+  background-image: radial-gradient(#fff, #999);
+  overflow: hidden;
+}
+.yegor-letov {
+  position: relative;
+  width: 370px;
+  min-width: 370px;
+  height: 500px;
+  cursor: pointer;
+}
+.yegor-letov:hover .glasses .right .reflection:before {
+  top: 100px;
+  left: 100px;
+  opacity: 1;
+}
+.yegor-letov div::before,
+.yegor-letov div::after {
+  content: '';
+  position: absolute;
+}
+.head {
+  width: 100%;
+  height: 80%;
+  border-top-left-radius: 170px;
+  border-top-right-radius: 170px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  background: #e1e1e1;
+}
+.chin {
+  position: absolute;
+  bottom: 40px;
+  left: 22px;
+  width: 325px;
+  height: 325px;
+  background: #e1e1e1;
+  border-radius: 7em;
+  transform: rotate(45deg);
+}
+.hair {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.hair div {
+  position: absolute;
+  top: -10px;
+  background: #333;
+  height: 100%;
+  z-index: 2;
+}
+.hair .left {
+  left: 0;
+  width: 50%;
+  border-top-left-radius: 170px;
+  border-bottom-right-radius: 170px;
+}
+.hair .left::before,
+.hair .left::after {
+  top: 17px;
+  left: 100%;
+  width: 100px;
+  height: 100px;
+}
+.hair .left::after {
+  width: 112px;
+  height: 101px;
+  border-radius: 50%;
+  background: #e1e1e1;
+}
+.hair .left::before {
+  top: 5px;
+  height: 110px;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  background: #333;
+}
+.hair .right {
+  right: -10px;
+  width: 60%;
+  border-top-right-radius: 170px;
+  border-bottom-left-radius: 170px;
+  z-index: -1;
+}
+.glasses {
+  position: absolute;
+  top: 130px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;
+}
+.glasses div {
+  width: 130px;
+  height: 130px;
+  background: #1f1f1f;
+  border-radius: 50%;
+}
+.glasses .right {
+  position: relative;
+}
+.glasses .right::after {
+  top: 55px;
+  right: -30px;
+  width: 50px;
+  height: 20px;
+  background: #1f1f1f;
+}
+.glasses .right::before {
+  top: 46px;
+  left: -54px;
+  border: 20px solid transparent;
+  border-top: 20px solid #1f1f1f;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.glasses .right .reflection {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.glasses .right .reflection::before {
+  top: 15px;
+  left: -115px;
+  width: 150%;
+  height: 25px;
+  background: #eee;
+  opacity: 0.5;
+  transform: rotate(-40deg);
+  z-index: 5;
+  transition: opacity ease-in-out 0.5s, top ease-in-out 0.5s, left ease-in-out 0.5s;
+}
+.glasses .brow {
+  position: absolute;
+  top: -20px;
+  right: 38px;
+  border: 15px solid transparent;
+  border-top: 15px solid #333;
+  width: 120px;
+  height: 90px;
+  border-radius: 50%;
+  background: transparent;
+  transform: rotate(-7deg);
+}
+.nose {
+  position: absolute;
+  background: #ccc;
+  height: 100px;
+  width: 35px;
+  z-index: 1;
+  left: 49%;
+  top: 39%;
+  border-top-left-radius: 4em;
+  border-top-right-radius: 4em;
+}
+.nose::before {
+  background: inherit;
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  bottom: -10px;
+  left: -10px;
+  transform: rotate(45deg);
+}
+.mouth {
+  position: absolute;
+  left: 50%;
+  bottom: 110px;
+  z-index: 1;
+  margin-left: -80px;
+  width: 160px;
+  height: 30px;
+  background: #aaa;
+  border-radius: 50%;
+}
+.jacket {
+  position: absolute;
+  top: 60%;
+  left: -200px;
+  border: 400px solid transparent;
+  border-top: 400px solid #222;
+  border-radius: 50%;
+  z-index: -2;
+}
+.barbed-wire {
+  position: fixed;
+  width: 150%;
+  height: 4px;
+  background: #111;
+  z-index: 5;
+}
+.barbed-wire-one {
+  top: 25%;
+  transform: rotate(5deg);
+}
+.barbed-wire-two {
+  top: initial;
+  bottom: 50px;
+  transform: rotate(2deg);
+}
+.barbed-wire-three {
+  top: 60%;
+  transform: rotate(-10deg);
+}
+.barbed-wire-four {
+  top: 80%;
+  transform: rotate(11deg);
+}
+.spike {
+  position: absolute;
+  background: #111;
+  width: 20px;
+  height: 10px;
+  top: -3px;
+  left: 40%;
+}
+.spike::before,
+.spike::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 300%;
+  top: -10px;
+  left: 0;
+  border-left: 2px solid #111;
+  border-right: 2px solid #111;
+}
+.spike::before {
+  transform: rotate(-5deg);
+}
+.spike::after {
+  transform: rotate(25deg);
+}
+.spike-one {
+  left: 20%;
+}
+.spike-two {
+  left: 40%;
+}
+.spike-two::after {
+  display: none;
+}
+.spike-three {
+  left: 60%;
+}
+.spike-four {
+  left: 80%;
+}
+.spike-four::after {
+  display: none;
+}
+.bio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px 40px;
+  z-index: 10;
+  color: #fff;
+  -webkit-clip-path: circle(0%);
+          clip-path: circle(0%);
+  opacity: 0;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.8);
+  transition: opacity 0.3s ease-in-out, -webkit-clip-path 0.25s ease-in-out;
+  transition: opacity 0.3s ease-in-out, clip-path 0.25s ease-in-out;
+  transition: opacity 0.3s ease-in-out, clip-path 0.25s ease-in-out, -webkit-clip-path 0.25s ease-in-out;
+}
+.bio h1 {
+  font-size: 40px;
+}
+.bio p {
+  line-height: 1.8;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+}
+.bio a {
+  color: #dedede;
+}
+.bio img {
+  float: right;
+  width: 40%;
+  margin: 0 0 10px 20px;
+}
+.bio .close {
+  position: absolute;
+  top: 2%;
+  right: 3%;
+  width: auto;
+  height: auto;
+  font-size: 50px;
+  cursor: pointer;
+  opacity: 0.8;
+  transform: rotate(45deg);
+  transition: opacity 0.2s ease-in-out;
+}
+.bio .close:hover {
+  opacity: 1;
+}
+.show-bio {
+  -webkit-clip-path: circle(100%);
+          clip-path: circle(100%);
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out, -webkit-clip-path 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out, clip-path 0.3s ease-in-out;
+  transition: opacity 0.25s ease-in-out, clip-path 0.3s ease-in-out, -webkit-clip-path 0.3s ease-in-out;
+}
